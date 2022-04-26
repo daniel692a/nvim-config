@@ -4,7 +4,6 @@ syntax enable
 set showcmd
 set encoding=utf-8
 set showmatch
-set relativenumber
 
 call plug#begin('~/.vim/plugged')
 "Theme
@@ -20,6 +19,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 
 "NerdTree
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
 "IdentLine
 Plug 'Yggdroot/indentLine'
@@ -43,14 +43,22 @@ Plug 'tpope/vim-eunuch'
 "JavaScript
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'othree/html5.vim'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 "Snippets
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 
+"CPBooster
+Plug 'searleser97/cpbooster.vim'
 call plug#end()
 
 "THEME config"
 colorscheme eva01
+
+"Font for icons
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+let g:airline_powerline_fonts = 1
 
 "LSP config
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
@@ -249,5 +257,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-
